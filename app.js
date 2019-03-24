@@ -18,4 +18,4 @@ app.use((req, res, next) => {
 })
 app.use('/feed', feedRoutes);
 
-mongoose.connect('mongodb+srv://dbUsername:learnAPI@cluster0-ozt5p.mongodb.net/test?retryWrites=true').then(result => {app.listen(8080);}).catch(err => console.log(err));
+mongoose.connect('mongodb+srv://dbUsername:learnAPI@cluster0-ozt5p.mongodb.net/messages?retryWrites=true').then(result => {app.listen(8080);}).catch(err => console.log(err));
