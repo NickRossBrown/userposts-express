@@ -1,8 +1,8 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose  = require('mongoose');
 const feedRoutes = require('./routes/feed');
-const path = require('path');
 const multer = require('multer');
 
 const app = express();
@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 app.use (
     multer({ storage: fileStorage, fileFilter: fileFiler}).single('image')
 )
-app.use('./images', express.static(path.join(__dirname, 'images')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use((req, res, next) => {
     // set all the url domains that are allowed to access our server
     res.setHeader('Access-Control-Allow-Origin', '*');
